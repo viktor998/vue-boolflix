@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolflix</title>
+    <link rel="stylesheet" href="./assets/css/master.css">
+</head>
+<body>
+    <div id="root">
+        <div class="input-search">
+            <input type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb() && clicked == true" @keyup.delete="deleteDb()">
+            
+        </div>
+
+        <div class="found" v-if="search != ''" >
+            <div class="movies">
+                <h3>
+                    Movies
+                </h3>
+                <div class="locandine">
+                    <div v-for="movie in searchFilterMovies" class="locandina">
+                        <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${movie.poster_path}');`"></div>
+                        <div class="overlay">
+                            <span>Titolo: {{movie.title}} </span>
+                            <span>Titolo originale: {{movie.original_title}} </span>
+                            <span>Lingua: {{movie.original_language}} </span>
+                            <span>Voto: {{movie.vote_average}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="tvShow">
+                <h3>
+                    Tv Show
+                </h3>
+
+                <div class="locandine">
+                    <div v-for="tv in searchFilterTv" class="locandina">
+                        <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${tv.poster_path}');`"></div>
+                        <div class="overlay">
+                            <span>Titolo: {{tv.name}} </span>
+                            <span>Titolo originale: {{tv.original_name}} </span>
+                            <span>Lingua: {{tv.original_language}} </span>
+                            <span>Voto: {{tv.vote_average}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="popular" v-if="search == '' " >
+            <div class="movies">
+                <h3>
+                    Popular Movies
+                </h3>
+                <div class="locandine">
+                    <div v-for="movie in popularMovies" class="locandina">
+                        <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${movie.poster_path}');`"></div>
+                        <div class="overlay">
+                            <span>Titolo: {{movie.title}} </span>
+                            <span>Titolo originale: {{movie.original_title}} </span>
+                            <span>Lingua: {{movie.original_language}} </span>
+                            <span>Voto: {{movie.vote_average}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="tvShow">
+                <h3>
+                    Popular Tv Show
+                </h3>
+
+                <div class="locandine">
+                    <div v-for="tv in popularTvShows" class="locandina">
+                        <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${tv.poster_path}');`"></div>
+                        <div class="overlay">
+                            <span>Titolo: {{tv.name}} </span>
+                            <span>Titolo originale: {{tv.original_name}} </span>
+                            <span>Lingua: {{tv.original_language}} </span>
+                            <span>Voto: {{tv.vote_average}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
