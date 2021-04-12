@@ -17,7 +17,7 @@
 
 .input-search{
     width: 100%;
-    height: 20%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@ input:focus{
 
 .popular, .found{
     width: 100%;
-    height: 80%;
+    height: 90%;
     
 }
 
@@ -47,8 +47,10 @@ input:focus{
 
 .popular h3, .found h3{ 
     padding-left: 15px;
+    margin-top: 10px;
 }
 .locandine{
+    margin-top: 10px;
     height: 230px;
     width: 100vw;
     
@@ -85,6 +87,10 @@ input:focus{
     margin-left: 5px;
     padding: 10px 0;
     font-size: 13px;
+}
+
+span img{
+    width: 24px;
 }
 
 .locandina:hover .overlay{

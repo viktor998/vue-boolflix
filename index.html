@@ -10,13 +10,13 @@
 <body>
     <div id="root">
         <div class="input-search">
-            <input type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb() && clicked == true" @keyup.delete="deleteDb()">
+            <input type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb()" @keyup.delete="deleteDb()">
             
         </div>
 
         <div class="found" v-if="search != ''" >
             <div class="movies">
-                <h3>
+                <h3 v-if=" clicked == true " >
                     Movies
                 </h3>
                 <div class="locandine">
@@ -25,7 +25,7 @@
                         <div class="overlay">
                             <span>Titolo: {{movie.title}} </span>
                             <span>Titolo originale: {{movie.original_title}} </span>
-                            <span>Lingua: {{movie.original_language}} </span>
+                            <span >Lingua: <img  :src="`https://www.unknown.nu/flags/images/${movie.original_language}-100`">   </span>
                             <span>Voto: {{movie.vote_average}}</span>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="tvShow">
-                <h3>
+                <h3 v-if=" clicked == true " >
                     Tv Show
                 </h3>
 
@@ -44,7 +44,7 @@
                         <div class="overlay">
                             <span>Titolo: {{tv.name}} </span>
                             <span>Titolo originale: {{tv.original_name}} </span>
-                            <span>Lingua: {{tv.original_language}} </span>
+                            <span>Lingua: <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`">  </span>
                             <span>Voto: {{tv.vote_average}}</span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
 
         <div class="popular" v-if="search == '' " >
             <div class="movies">
-                <h3>
+                <h3 v-if=" clicked == false " >
                     Popular Movies
                 </h3>
                 <div class="locandine">
@@ -64,7 +64,8 @@
                         <div class="overlay">
                             <span>Titolo: {{movie.title}} </span>
                             <span>Titolo originale: {{movie.original_title}} </span>
-                            <span>Lingua: {{movie.original_language}} </span>
+                            <span >Lingua: <img  :src="`https://www.unknown.nu/flags/images/${movie.original_language}-100`">  </span>
+                            
                             <span>Voto: {{movie.vote_average}}</span>
                         </div>
                     </div>
@@ -73,7 +74,7 @@
             </div>
 
             <div class="tvShow">
-                <h3>
+                <h3 v-if=" clicked == false " >
                     Popular Tv Show
                 </h3>
 
@@ -83,7 +84,7 @@
                         <div class="overlay">
                             <span>Titolo: {{tv.name}} </span>
                             <span>Titolo originale: {{tv.original_name}} </span>
-                            <span>Lingua: {{tv.original_language}} </span>
+                            <span>Lingua: <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`"> </span>
                             <span>Voto: {{tv.vote_average}}</span>
                         </div>
                     </div>
