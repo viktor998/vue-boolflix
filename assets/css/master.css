@@ -51,7 +51,7 @@ input:focus{
 }
 .locandine{
     margin-top: 10px;
-    height: 230px;
+    height: 250px;
     width: 100vw;
     
     display: flex;
@@ -61,7 +61,7 @@ input:focus{
 
 .locandina{
     width: 150px;
-    height: 200px;
+    height: 210px;
     display: flex;
     margin: 0 10px;
     position: relative;
@@ -98,18 +98,21 @@ span img{
 }
 
 ::-webkit-scrollbar {
-    
     width: 7px;
-    height: 4px;
-   }
-   ::-webkit-scrollbar-thumb {
-       
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
     background: #757575;
     border-radius: 10px;
-   }
+}
 
-   ::-webkit-scrollbar-track{
+::-webkit-scrollbar-track{
     margin-left: 20px;
     border-radius: 10px;
-    
-   }
+
+}
+
+i.fas.fa-star, i.far.fa-star{
+    color: yellow;
+}
