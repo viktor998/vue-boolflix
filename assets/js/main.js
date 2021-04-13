@@ -41,7 +41,7 @@ var app = new Vue({
                 this.searchFilterTv = response.data.results
                 
             })
-            
+            this.inputSearch = false;
         },
         deleteDb: function(){
             this.clicked = false;

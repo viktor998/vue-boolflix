@@ -13,7 +13,10 @@
         <div class="header">
             <i class="fas fa-search" @click="changeInput"></i>
             <a href=""><img src="https://fontmeme.com/permalink/210413/0a43aa36584f2895324a0006b42b5d1a.png" alt="netflix-font" border="0"></a>
-            <input v-if="inputSearch == true" type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb()" @keyup.delete="deleteDb()">
+            <div class="inputDes" v-if="inputSearch == true">
+                <input  type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb()" @keyup.delete="deleteDb()">
+                <i class="fas fa-times" @click="changeInput"></i>
+            </div>
             
         </div>
 
@@ -22,7 +25,7 @@
                 <h3 v-if=" clicked == true &&  searchFilterMovies.length" >
                     Movies
                 </h3>
-                <div class="locandine">
+                <div class="locandine_search">
                     <div v-for="movie in searchFilterMovies" class="locandina_search" v-if="movie.poster_path != null">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${movie.poster_path}');`"></div>
                         <div class="overlay_search">
@@ -45,7 +48,7 @@
                     
                 </h3>
 
-                <div class="locandine">
+                <div class="locandine_search">
                     <div v-for="tv in searchFilterTv" class="locandina_search" v-if="tv.poster_path != null ">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${tv.poster_path}');`"></div>
                         <div class="overlay_search">
@@ -81,7 +84,7 @@
                                 <img  :src="`https://www.unknown.nu/flags/images/${movie.original_language}-100`">
                             </div>
                             <div class="overview">
-                                {{movie.overview}}
+                                <p>{{movie.overview}}</p>
                             </div>
                         </div>
                     </div>

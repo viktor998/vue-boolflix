@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
 #root{
@@ -42,6 +44,12 @@
     z-index: 10;
     top: 10px;
     right: 10px;
+}
+
+.header .inputDes i{
+    display: none;
+    
+    
 }
 
 .header input{
@@ -102,12 +110,32 @@ input:focus{
     
 }
 
+.found{
+    overflow-y: scroll;
+}
+
+.found .movies{
+    margin: 0 auto;
+}
+
+.locandine_search{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    
+    
+}
+
 .locandina_search{
     width: 150px;
     height: 210px;
     display: flex;
     margin: 0 10px;
     position: relative;
+    flex-basis: auto;
+   
 }
 
 .locandina{
@@ -136,14 +164,16 @@ input:focus{
     background-size: cover;
     background-repeat: no-repeat;
     flex-direction: column;
-    box-shadow: inset 400px 10px 150px 50px rgb(0, 0, 0);
+    box-shadow: inset 350px 10px 350px 250px rgb(0, 0, 0);
 }
 
 .overlay_search{
     width: 100%;
-    height: 100%;
+    height: 95%;
     display: none;
     position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.712);
     flex-direction: column;
     justify-content: center;
@@ -156,17 +186,21 @@ input:focus{
 .overlay .title{
     margin-top: 50px;
     color: #DB202C;
-    font-family: 'Rubik', sans-serif;
+    
     font-weight: bolder;
     font-size: 32px;
 }
 
 .overlay span, .stars_release_lang, .overview{
-    max-width: 600px;
+   
     margin-left: 50px;
     padding: 10px 0;
     font-size: 13px;
     
+}
+
+.overview{
+    font-size: 16px;
 }
 
 .stars_release_lang{
@@ -215,4 +249,73 @@ input:focus{
 
 i.fas.fa-star, i.far.fa-star{
     color: yellow;
+}
+
+
+/* MEDIA */
+
+@media screen and (max-width: 768px) {
+
+    .header{
+        width: 7%;
+        
+    }
+    .header i{
+        font-size: 18px;
+    }
+
+    .header a img{
+        width: 100px;
+        position: fixed;
+        z-index: 10;
+        top: 10px;
+        right: 30px;
+    }
+    .inputDes{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 30;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        
+        background-color: black;
+    }
+
+    .header .inputDes i{
+        display: flex;
+        margin-left: auto;
+        padding-right: 15%;
+        padding-top: 2px;
+    }
+
+    .header input{
+        width: 60%;
+        margin-left: auto;
+        justify-self: center;
+        
+    }
+
+    .overlay{
+        background-position: center;
+        box-shadow: inset 70px 50px 150px 500px rgba(0, 0, 0, 0.849);
+    }
+
+    .overlay .title{
+        margin-top: 80px;
+        font-size: 26px;
+    }
+
+    .overlay span, .stars_release_lang, .overview{
+        margin: 0 10px;
+        font-size: 13px;
+        
+    }
+    .overview{
+        font-size: 16px;
+        height: 400px;
+        overflow-y: scroll;
+    }
+    
 }
