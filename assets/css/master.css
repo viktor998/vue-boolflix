@@ -8,19 +8,50 @@
 #root{
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.959);
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
     
 }
 
-.input-search{
-    width: 100%;
-    height: 10%;
+.header{
+    background-color: black;
+    width: 5%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
+    
+}
+
+.header i{
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.header i:hover{
+    cursor: pointer;
+}
+
+
+.header a img{
+    width: 150px;
+    position: fixed;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+}
+
+.header input{
+    margin-left: auto;
+    justify-self: center;
+    z-index: 30;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 input{
@@ -37,9 +68,21 @@ input:focus{
     outline: none;
 }
 
+.found{
+    margin-top: 50px;
+    
+}
+
+.popular{
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
 .popular, .found{
     width: 100%;
-    height: 90%;
+    height: 100%;
     
 }
 
@@ -51,15 +94,15 @@ input:focus{
 }
 .locandine{
     margin-top: 10px;
-    height: 250px;
-    width: 100vw;
-    
+    margin-bottom: 10px;
+    height: 230px;
+    width: 95vw;
     display: flex;
     overflow-x: scroll;
-    overflow-y: hidden;
+    
 }
 
-.locandina{
+.locandina_search{
     width: 150px;
     height: 210px;
     display: flex;
@@ -67,7 +110,16 @@ input:focus{
     position: relative;
 }
 
+.locandina{
+    width: 150px;
+    height: 210px;
+    display: flex;
+    margin: 0 10px;
+    z-index: 20;
+}
+
 .poster{
+    z-index: 10;
     background-size: cover;
     width: 150px;
     height: 200px;
@@ -77,37 +129,85 @@ input:focus{
     width: 100%;
     height: 100%;
     display: none;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    box-shadow: inset 400px 10px 150px 50px rgb(0, 0, 0);
+}
+
+.overlay_search{
+    width: 100%;
+    height: 100%;
+    display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.712);
     flex-direction: column;
     justify-content: center;
 }
 
-.overlay span{
-    margin-left: 5px;
-    padding: 10px 0;
-    font-size: 13px;
+.overlay_search span img{
+    width: 24px;
 }
 
-span img{
+.overlay .title{
+    margin-top: 50px;
+    color: #DB202C;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bolder;
+    font-size: 32px;
+}
+
+.overlay span, .stars_release_lang, .overview{
+    max-width: 600px;
+    margin-left: 50px;
+    padding: 10px 0;
+    font-size: 13px;
+    
+}
+
+.stars_release_lang{
+    display: flex;
+    justify-content: space-between;
+    max-width: 150px;
+}
+
+.stars_release_lang img{
+    z-index: 10;
     width: 24px;
+}
+
+.locandina:hover{
+    z-index: 1;
 }
 
 .locandina:hover .overlay{
     display: flex;
+    z-index: 1;
+}
+
+.locandina_search:hover .overlay_search{
+    display: flex;
+    z-index: 10;
 }
 
 ::-webkit-scrollbar {
+    
     width: 7px;
-    height: 3px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #757575;
+    
+    background: #36363683;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track{
+    
     margin-left: 20px;
     border-radius: 10px;
 

@@ -10,20 +10,21 @@ var app = new Vue({
         searchFilterTv:[],
         popularMovies: [],
         popularTvShows:[],
+        inputSearch: false,
     },
     mounted(){
         
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it')
         .then((response) =>{
             this.popularMovies = response.data.results
-               
+            console.log(this.popularMovies)  
             
         });
         
         axios.get('https://api.themoviedb.org/3/tv/popular?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it')
         .then((response) =>{
             this.popularTvShows = response.data.results
-            console.log(this.popularTvShows)
+            
         })
 
     },
@@ -46,6 +47,16 @@ var app = new Vue({
             this.clicked = false;
             this.searchFilterMovies = ''
             this.searchFilterTv = ''
+        },
+        dateRelease: function(movieDate){
+            
+            let nDate = new Date(movieDate);
+            let year = nDate.getFullYear();
+            return year
+        },
+        changeInput: function(){
+            
+            this.inputSearch = !this.inputSearch
         }
     }
 })
