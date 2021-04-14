@@ -14,7 +14,11 @@ var app = new Vue({
         showMoviesOrTV: true,
         mute: 'mute=1',
         keys: ['6ZfuNTqbHE8', 'v7X03INFQRg', 'ybji16u608U', '3cxixDgHUYw'],
-        indexVideo: ''
+        keysTV: ['IWBsDaFWyTE', 'nW948Va-l10', '3mTh2joPPj8', '2yrviapP5uY'],
+        indexVideo: '',
+        colorBind: '',
+        colorBindTv: '',
+        iframe: '#iframe',
     },
     mounted(){
         this.indexVideo= Math.floor(Math.random() * (this.keys.length - 0)) + 0
@@ -62,6 +66,9 @@ var app = new Vue({
         changeInput: function(){
             
             this.inputSearch = !this.inputSearch
-        }
+        },
+
     }
 })
+
+// $('.yt_player_iframe').each(        .postMessage('{"event":"command","func":"stopVideo","args":""}', '*')
