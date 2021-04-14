@@ -12,9 +12,12 @@ var app = new Vue({
         popularTvShows:[],
         inputSearch: false,
         showMoviesOrTV: true,
-        
+        mute: 'mute=1',
+        keys: ['6ZfuNTqbHE8', 'v7X03INFQRg', 'ybji16u608U', '3cxixDgHUYw'],
+        indexVideo: ''
     },
     mounted(){
+        this.indexVideo= Math.floor(Math.random() * (this.keys.length - 0)) + 0
         
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it')
         .then((response) =>{

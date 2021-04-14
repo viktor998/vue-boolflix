@@ -76,7 +76,7 @@
 
         <div class="popular" v-if="search == '' " >
             <div class="movies" v-if="showMoviesOrTV == true">    
-                <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=1&controls=0&fs=0&loop=1&rel=0&modestbranding=0&showinfo=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe>
+                <iframe  width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?autoplay=1&controls=0&fs=0&loop=1&rel=0&modestbranding=0&showinfo=0&${mute}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe>
                
                 <div class="locandine">
                     <div v-for="movie in popularMovies" class="locandina">
