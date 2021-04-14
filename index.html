@@ -12,6 +12,13 @@
     <div id="root">
         <div class="header">
             <i class="fas fa-search" @click="changeInput"></i>
+            <i class="fas fa-video" @click="showMoviesOrTV = true"></i>
+            <i class="fas fa-tv" @click="showMoviesOrTV = false"></i>
+            <div class="comming">
+                
+                <i class="fas fa-theater-masks"></i>
+                <p>comming soon</p>
+            </div>
             <a href=""><img src="https://fontmeme.com/permalink/210413/0a43aa36584f2895324a0006b42b5d1a.png" alt="netflix-font" border="0"></a>
             <div class="inputDes" v-if="inputSearch == true">
                 <input  type="text" placeholder="Search Movie or Tv Show" v-model="search" @keyup.enter="searchInDb()" @keyup.delete="deleteDb()">
@@ -68,12 +75,15 @@
         
 
         <div class="popular" v-if="search == '' " >
-            <div class="movies">
-                
+            <div class="movies" v-if="showMoviesOrTV == true">    
+                <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/6ZfuNTqbHE8?autoplay=1&controls=0&fs=0&loop=1&rel=0&modestbranding=0&showinfo=0&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe>
+               
                 <div class="locandine">
                     <div v-for="movie in popularMovies" class="locandina">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${movie.poster_path}');`"></div>
+                        
                         <div class="overlay" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}');`">
+                            
                             <span class="title">{{movie.title}} </span>
                             <div class="stars_release_lang">
                                 <div class="rating">
@@ -92,26 +102,46 @@
                 
             </div>
 
-            <!-- <div class="tvShow">
-                <h3 v-if=" clicked == false " >
-                    Popular Tv Show
-                </h3>
+            <div class="tvShow" v-if="showMoviesOrTV == false">
+               
 
                 <div class="locandine">
                     <div v-for="tv in popularTvShows" class="locandina">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${tv.poster_path}');`"></div>
-                        <div class="overlay">
-                            <span>Titolo: {{tv.name}} </span>
-                            <span>Titolo originale: {{tv.original_name}} </span>
-                            <span>Lingua: <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`"> </span>
-                            <span>Voto: {{Math.round(tv.vote_average/2)}}
-                                <i v-for="number in Math.round(tv.vote_average/2)"  class="fas fa-star"></i>  
-                                <i v-if="Math.round(tv.vote_average/2) != 5" v-for="num in (5 - Math.round(tv.vote_average/2))"     class="far fa-star"></i>
-                            </span>
+
+                        <div class="overlay" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${tv.backdrop_path}');`">
+                            <span class="title">{{tv.name}} </span>
+                            <div class="stars_release_lang">
+                                <div class="rating">
+                                    <i v-for="number in Math.round(tv.vote_average/2)"  class="fas fa-star"></i>  
+                                    <i v-if="Math.round(tv.vote_average/2) != 5" v-for="num in (5 - Math.round(tv.vote_average/2))" class="far fa-star"></i>
+                                </div>
+                                <p> {{ dateRelease(tv.first_air_date) }} </p>
+                                <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`">
+                            </div>
+                            <div class="overview">
+                                <p>{{tv.overview}}</p>
+                            </div>
                         </div>
+
+                        <!-- <div class="overlay" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${tv.backdrop_path}');`">
+                            <span class="title">{{tv.name}} </span>
+                            <div class="stars_release_lang">
+                                <div class="rating">
+                                    <i v-for="number in Math.round(tv.vote_average/2)"  class="fas fa-star"></i>  
+                                    <i v-if="Math.round(tv.vote_average/2) != 5" v-for="num in (5 - Math.round(tv.vote_average/2))"     class="far fa-star"></i>
+                                </div>
+                                <p> {{ dateRelease(tv.first_air_date) }} </p>
+                                <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`">
+                            </div>
+                            <div class="overview">
+                                <p>{{tv.overview}}</p>
+                            </div>
+                           
+                        </div> -->
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 

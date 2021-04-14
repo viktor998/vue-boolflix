@@ -11,13 +11,15 @@ var app = new Vue({
         popularMovies: [],
         popularTvShows:[],
         inputSearch: false,
+        showMoviesOrTV: true,
+        
     },
     mounted(){
         
         axios.get('https://api.themoviedb.org/3/movie/popular?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it')
         .then((response) =>{
             this.popularMovies = response.data.results
-            console.log(this.popularMovies)  
+            
             
         });
         
@@ -34,7 +36,7 @@ var app = new Vue({
             axios.get('https://api.themoviedb.org/3/search/movie?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it&query='+this.search)
             .then((response) =>{
                 this.searchFilterMovies = response.data.results
-                
+                console.log(this.searchFilterMovies)
             })
             axios.get('https://api.themoviedb.org/3/search/tv?api_key=6e29a3130ae055f9d91902afdf5cc018&language=it&query='+this.search)
             .then((response) =>{
