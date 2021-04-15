@@ -266,9 +266,7 @@ iframe{
 }
 
 ::-webkit-scrollbar {
-    position: fixed;
-    bottom: 5px;
-    z-index: 150;
+    
     width: 7px;
     height: 5px;
 }
@@ -296,7 +294,7 @@ i.fas.fa-star, i.far.fa-star{
 @media screen and (max-width: 768px) {
 
     .header{
-        width: 7%;
+        width: 12%;
         
     }
     .header i{
@@ -357,11 +355,7 @@ i.fas.fa-star, i.far.fa-star{
         overflow-y: scroll;
     }
     iframe{
-        position:absolute;
-        top: 0;
-        left:0;
-        width:100%;
-        height:100%;
+    
         transform: scale(5.75, 5.75);
         /* clip-path: polygon(0 17%, 100% 17%, 100% 70%, 0 70%); */
     }
