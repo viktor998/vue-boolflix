@@ -164,6 +164,12 @@ video{
     overflow-y: scroll;
 }
 
+.movies, .locandine{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
 .found .movies{
     margin: 0 auto;
 }
