@@ -387,7 +387,7 @@ i.fas.fa-star, i.far.fa-star{
         /* clip-path: polygon(0 17%, 100% 17%, 100% 70%, 0 70%); */
     }
 
-    .overlay{
+    /* .overlay{
         width: 100vh;
         height: 100vh;
         display: none;
@@ -400,7 +400,7 @@ i.fas.fa-star, i.far.fa-star{
         flex-direction: column;
         -webkit-flex-direction: column;
         box-shadow: inset 350px 10px 350px 250px rgb(0, 0, 0);
-    }
+    } */
     
 }
 
