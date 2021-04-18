@@ -164,7 +164,7 @@ video{
     overflow-y: scroll;
 }
 
-.movies, .locandine{
+.movies, .locandine, .tvShow{
     height: 100%;
     display: flex;
     align-items: flex-end;
@@ -244,8 +244,10 @@ video{
     -webkit-justify-content: center;
 }
 
+
 .overlay_search span img{
     width: 24px;
+    
 }
 
 .overlay .title{
@@ -278,6 +280,7 @@ video{
 .stars_release_lang img{
     z-index: 10;
     width: 24px;
+    height: 14px;
 }
 
 .locandina:hover{
