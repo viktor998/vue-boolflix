@@ -81,8 +81,6 @@
                     :src="keys[indexVideo]"
                     width="100%" height="100%">
                 </video>
-                <!-- <iframe loading="lazy" width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${keys[indexVideo]}&mute=1&playsinline=1`" frameborder="0" allowfullscreen data-autoplay data-keepplaying></iframe> -->
-                <!-- <iframe  width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?autoplay=1&loop=1&playlist=${keys[indexVideo]}&rel=0&${mute}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe> -->
                
                 <div class="locandine">
                     <div v-for="movie in popularMovies" onclick="" class="locandina">
@@ -134,21 +132,7 @@
                             </div>
                         </div>
 
-                        <!-- <div class="overlay" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${tv.backdrop_path}');`">
-                            <span class="title">{{tv.name}} </span>
-                            <div class="stars_release_lang">
-                                <div class="rating">
-                                    <i v-for="number in Math.round(tv.vote_average/2)"  class="fas fa-star"></i>  
-                                    <i v-if="Math.round(tv.vote_average/2) != 5" v-for="num in (5 - Math.round(tv.vote_average/2))"     class="far fa-star"></i>
-                                </div>
-                                <p> {{ dateRelease(tv.first_air_date) }} </p>
-                                <img  :src="`https://www.unknown.nu/flags/images/${tv.original_language}-100`">
-                            </div>
-                            <div class="overview">
-                                <p>{{tv.overview}}</p>
-                            </div>
-                           
-                        </div> -->
+                        
                     </div>
                 </div>
             </div>
