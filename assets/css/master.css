@@ -16,7 +16,6 @@
     background-color: rgba(0, 0, 0, 0.959);
     display: flex;
     -webkit-display: flex;
-    
     position: relative;
     overflow: hidden;
     
@@ -31,6 +30,7 @@
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: flex-start;
+    -webkit-justify-content: flex-start;
     align-items: center;
     -webkit-align-items: center;
     
@@ -51,6 +51,7 @@
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
     -webkit-align-items: center;
     
@@ -121,6 +122,7 @@ input:focus{
     display: flex;
     -webkit-display: flex;
     align-items: flex-end;
+    -webkit-align-items: flex-end;
     position: relative;
 }
 
@@ -172,7 +174,9 @@ video{
     display: flex;
     -webkit-display: flex;
     justify-content: stretch;
+    -webkit-justify-content: stretch;
     flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     
     
 }
@@ -185,6 +189,7 @@ video{
     margin: 0 10px;
     position: relative;
     flex-basis: auto;
+    -webkit-flex-basis: auto;
    
 }
 
@@ -230,6 +235,7 @@ video{
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: center;
+    -webkit-justify-content: center;
 }
 
 .overlay_search span img{
@@ -259,6 +265,7 @@ video{
     display: flex;
     -webkit-display: flex;
     justify-content: space-between;
+    -webkit-justify-content: space-between;
     max-width: 150px;
 }
 
@@ -313,6 +320,7 @@ i.fas.fa-star, i.far.fa-star{
 
     .header{
         width: 12%;
+        display: flex;
         -webkit-display: flex;
     }
     .header i{
