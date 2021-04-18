@@ -15,7 +15,8 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.959);
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
+    
     position: relative;
     overflow: hidden;
     
@@ -26,7 +27,7 @@
     width: 5%;
     height: 100%;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: flex-start;
@@ -46,7 +47,7 @@
 
 .header .comming{
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     flex-direction: column;
     -webkit-flex-direction: column;
     justify-content: center;
@@ -118,7 +119,7 @@ input:focus{
 .popular{
     overflow: hidden;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     align-items: flex-end;
     position: relative;
 }
@@ -152,7 +153,7 @@ video{
     height: 230px;
     width: 95vw;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     overflow-x: scroll;
     
 }
@@ -169,7 +170,7 @@ video{
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     justify-content: stretch;
     flex-wrap: wrap;
     
@@ -180,7 +181,7 @@ video{
     width: 150px;
     height: 210px;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     margin: 0 10px;
     position: relative;
     flex-basis: auto;
@@ -191,7 +192,7 @@ video{
     width: 150px;
     height: 210px;
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     margin: 0 10px;
     z-index: 20;
 }
@@ -256,7 +257,7 @@ video{
 
 .stars_release_lang{
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     justify-content: space-between;
     max-width: 150px;
 }
@@ -272,13 +273,13 @@ video{
 
 .locandina:hover .overlay{
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     z-index: 1;
 }
 
 .locandina_search:hover .overlay_search{
     display: flex;
-    display: -webkit-flex;
+    -webkit-display: flex;
     z-index: 10;
 }
 
@@ -312,7 +313,7 @@ i.fas.fa-star, i.far.fa-star{
 
     .header{
         width: 12%;
-        display: -webkit-flex;
+        -webkit-display: flex;
     }
     .header i{
         font-size: 18px;
@@ -333,13 +334,13 @@ i.fas.fa-star, i.far.fa-star{
         width: 100%;
         height: 100%;
         display: flex;
-        display: -webkit-flex;
+        -webkit-display: flex;
         background-color: black;
     }
 
     .header .inputDes i{
         display: flex;
-        display: -webkit-flex;
+        -webkit-display: flex;
         margin-left: auto;
         padding-right: 15%;
         padding-top: 2px;
