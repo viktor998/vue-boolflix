@@ -75,11 +75,12 @@
         
 
         <div class="popular" v-if="search == '' " >
-            <div class="movies" v-if="showMoviesOrTV == true">    
-                <video autoplay muted
+                <video autoplay muted v-if="showMoviesOrTV == true"
                     :src="keys[indexVideo]"
                     width="100%" height="100%">
                 </video>
+            <div class="movies" v-if="showMoviesOrTV == true">    
+                
                 <!-- <iframe loading="lazy" width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${keys[indexVideo]}&mute=1&playsinline=1`" frameborder="0" allowfullscreen data-autoplay data-keepplaying></iframe> -->
                 <!-- <iframe  width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?autoplay=1&loop=1&playlist=${keys[indexVideo]}&rel=0&${mute}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe> -->
                
@@ -109,10 +110,10 @@
 
             <div class="tvShow" v-if="showMoviesOrTV == false">
                
-                <video autoplay muted
-                :src="keysTV[indexVideo]"
+                <!-- <video autoplay muted
+                    :src="keysTV[indexVideo]"
                     width="100%" height="100%">
-                </video>
+                </video> -->
 
                 <div class="locandine">
                     <div v-for="tv in popularTvShows" onclick="" class="locandina">
