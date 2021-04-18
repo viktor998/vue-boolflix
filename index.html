@@ -76,14 +76,18 @@
 
         <div class="popular" v-if="search == '' " >
             <div class="movies" v-if="showMoviesOrTV == true">    
-                <iframe loading="lazy" width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${keys[indexVideo]}&mute=1&playsinline=1`" frameborder="0" allowfullscreen data-autoplay data-keepplaying></iframe>
+                <video autoplay muted
+                    :src="keys[indexVideo]"
+                    width="100%" height="100%">
+                </video>
+                <!-- <iframe loading="lazy" width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${keys[indexVideo]}&mute=1&playsinline=1`" frameborder="0" allowfullscreen data-autoplay data-keepplaying></iframe> -->
                 <!-- <iframe  width="100%" height="100%" :src="`https://www.youtube.com/embed/${keys[indexVideo]}?autoplay=1&loop=1&playlist=${keys[indexVideo]}&rel=0&${mute}`" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"></iframe> -->
                
                 <div class="locandine">
                     <div v-for="movie in popularMovies" class="locandina">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${movie.poster_path}');`"></div>
                         
-                        <div class="overlay" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}');`">
+                        <div class="overlay" :class="(display) ? 'display-none': 'display-flex'" :style="`background-image: url('https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}');`">
                             
                             <span class="title">{{movie.title}} </span>
                             <div class="stars_release_lang">
@@ -105,7 +109,11 @@
 
             <div class="tvShow" v-if="showMoviesOrTV == false">
                
-                <iframe loading="lazy" width="100%" height="100%" :src="`https://www.youtube.com/embed/${keysTV[indexVideo]}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=${keysTV[indexVideo]}&mute=1`" frameborder="0" allowfullscreen data-autoplay data-keepplaying></iframe>
+                <video autoplay muted
+                :src="keysTV[indexVideo]"
+                    width="100%" height="100%">
+                </video>
+
                 <div class="locandine">
                     <div v-for="tv in popularTvShows" class="locandina">
                         <div class="poster"  :style="`background-image: url('https://image.tmdb.org/t/p/w154/${tv.poster_path}');`"></div>
